@@ -1,5 +1,5 @@
 import MaterialDataTimePicker from "material-datetime-picker";
-import "material-datetime-picker/dist/material-datetime-picker.css";
+// import "material-datetime-picker/dist/material-datetime-picker.css";
 import "./scss/main.scss";
 
 const form = document.querySelector("#form");
