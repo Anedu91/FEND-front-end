@@ -17,7 +17,9 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "material-datetime-picker": "^2.4.0",
     "node-fetch": "^2.6.1",
+    "simplepicker": "^2.0.3",
     "webpack": "^5.11.1",
     "webpack-cli": "^4.3.1"
   },
