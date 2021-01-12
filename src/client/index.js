@@ -1,12 +1,12 @@
-import MaterialDataTimePicker from "material-datetime-picker";
-// import "material-datetime-picker/dist/material-datetime-picker.css";
+import "materialize-css/dist/js/materialize.min.js";
+import "materialize-css/dist/css/materialize.min.css";
 import "./scss/main.scss";
 
 const form = document.querySelector("#form");
 const pickerContainer = document.querySelector(".data-picker");
 
-const picker = new MaterialDataTimePicker();
-pickerContainer.addEventListener("click", () => picker.open());
+const picker = document.querySelector(".datepicker");
+const instances = M.Datepicker.init(picker);
 
 const handleSubmit = (e) => {
   e.preventDefault();

@@ -6,18 +6,26 @@
     <title>This is my new title</title>
   </head>
   <body>
-    <h1>This is a test</h1>
-
-    <form action="" id="form" method="POST">
-      <label for="place">Introduce a place to travel</label>
-      <input
-        type="text"
-        name="place"
-        id="place"
-        placeholder="Introduce a place"
-      />
-      <div class="data-picker">Hover me</div>
-      <button>Submit</button>
-    </form>
+    <header></header>
+    <main>
+      <div class="container">
+        <div class="row">
+          <h1 class="center-align">Fend App</h1>
+          <div class="col s6">
+            <form action="" method="POST">
+              <div class="input-field">
+                <input type="text" id="place" class="validate" />
+                <label for="place">Introduce your destination</label>
+              </div>
+              <div class="input-field">
+                <input type="text" class="datepicker" id="date" />
+                <label for="date">Introduce the flight date</label>
+              </div>
+              <button class="btn">Start the journy</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
