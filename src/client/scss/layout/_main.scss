@@ -1,0 +1,21 @@
+.body {
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.section {
+  &--form {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  &--place {
+    margin-bottom: auto;
+    margin-top: auto;
+  }
+}

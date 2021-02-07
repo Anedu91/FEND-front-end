@@ -1,0 +1,11 @@
+.favorite {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem 1.5rem;
+  max-width: 80vw;
+  margin: auto;
+  margin-top: 3rem;
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

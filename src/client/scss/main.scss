@@ -1,1 +1,12 @@
+/*Base*/
+@import "base/variables";
+@import "base/typography";
 
+/*Components*/
+@import "components/favorite";
+@import "components/form";
+@import "components/preloader";
+@import "components/trip";
+
+/*Layout*/
+@import "layout/main";

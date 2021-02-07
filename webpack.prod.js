@@ -3,9 +3,12 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CssMinimizerPlugin = require("mini-css-extract-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+const WorkboxPlugin = require("workbox-webpack-plugin");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: "./src/client/index.js",
   module: {
     rules: [
@@ -30,22 +33,19 @@ module.exports = {
       },
     ],
   },
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin({}), new CssMinimizerPlugin({})],
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/client/index.html",
       filename: "./index.html",
     }),
     new MiniCssExtractPlugin({
-      filename: "style.css",
+      filename: "main.css",
     }),
-    new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: [path.join(__dirname, "dist/**/*")],
-    }),
+    new CleanWebpackPlugin(),
+    new WorkboxPlugin.GenerateSW(),
   ],
-  devServer: {
-    contentBase: path.join(__dirname, "dist"),
-    compress: true,
-    port: 9000,
-    open: true,
-  },
 };

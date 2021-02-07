@@ -3,29 +3,87 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>This is my new title</title>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <title>Udacity FEND</title>
   </head>
-  <body>
-    <header></header>
-    <main>
-      <div class="container">
-        <div class="row">
-          <h1 class="center-align">Fend App</h1>
-          <div class="col s6">
-            <form action="" method="POST">
-              <div class="input-field">
-                <input type="text" id="place" class="validate" />
-                <label for="place">Introduce your destination</label>
-              </div>
-              <div class="input-field">
-                <input type="text" class="datepicker" id="date" />
-                <label for="date">Introduce the flight date</label>
-              </div>
-              <button class="btn">Start the journy</button>
-            </form>
+  <body class="body">
+    <header class="header">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Travel-Planer</a>
+          <ul id="nav-mobile" class="right">
+            <li><a href="#" class="add-form">Add a trip</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="main">
+      <h1 class="heading-1 center-align">Udacity Travel-Planner</h1>
+      <section class="section--form">
+        <form action="" class="form" method="POST" id="form">
+          <div class="input-field">
+            <input
+              type="text"
+              id="place"
+              class="validate"
+              name="place"
+              required
+            />
+            <label for="place"
+              >Introduce your destination (City or Country)</label
+            >
+          </div>
+          <div class="input-field">
+            <input
+              type="text"
+              class="datepicker validate"
+              id="date"
+              name="date"
+              required
+            />
+            <label for="date">Introduce the flight date</label>
+          </div>
+          <button class="btn red lighten-2 form__btn">Start the journy</button>
+        </form>
+      </section>
+      <section class="section--place">
+        <div class="trip" id="trip"></div>
+        <div class="favorite" id="favorite"></div>
+      </section>
+    </main>
+    <div class="preloader hide">
+      <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
           </div>
         </div>
       </div>
-    </main>
+    </div>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      // Check that service workers are supported
+      if ("serviceWorker" in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js");
+        });
+      }
+    </script>
   </body>
 </html>
