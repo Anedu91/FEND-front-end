@@ -1,5 +1,6 @@
 const creatingNextTrip = (trip) => {
   const { place, dataReceived, dateInformation } = trip;
+  // Showing this component if an error appear
   if (Object.keys(dataReceived).length === 0) {
     loader(false);
     return `<div class="card blue-grey darken-1">
@@ -11,7 +12,9 @@ const creatingNextTrip = (trip) => {
       <a href="#" class="error__button">Submit another place</a>
     </div>
   </div>`;
+    // if everything okay render the api information
   } else {
+    // removing the loader component
     loader(false);
     return `<div class="trip__item card blue-grey darken-1">
     <article class="trip__article white-text">
@@ -31,13 +34,13 @@ const creatingNextTrip = (trip) => {
    </div>`;
   }
 };
-
+//loader component
 const loader = (status) => {
   const $loader = document.querySelector(".preloader");
 
   status ? $loader.classList.remove("hide") : $loader.classList.add("hide");
 };
-
+// Adding trips to favorite container
 const favoriteTrip = (trips) => {
   return trips
     .map((trip, index) => {
